@@ -1,7 +1,7 @@
 # VokesBrawl-v34
 Brawl Stars server emulator for version 34.151
 
-![screenshot](https://github.com/VokesTeam/VokesBrawl-v34/blob/main/screenshot/screenshot.jpg)
+![screenshot](https://github.com/VokesTeam/VokesBrawl-v34/blob/main/screenshot/screenshot.png)
 
 ## Implemented features:
  - Anti-DDOS
