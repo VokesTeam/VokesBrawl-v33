@@ -1,5 +1,5 @@
 from Protocol.Messages.Server.Authentication.LoginOkMessage import LoginOkMessage 
-from Protocol.Messages.Server.Home.OwnHomeData import OwnHomeData
+from Protocol.Messages.Server.Home.OwnHomeDataMessage import OwnHomeData
 
 from DataStream.ByteStream import Reader
 from Utilities.Helpers import Helpers

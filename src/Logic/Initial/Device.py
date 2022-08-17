@@ -8,6 +8,3 @@ class Device:
 	
 	def __init__(self, socket):
 		self.socket = socket
-		
-	def SendData(self, data):
-		self.socket.send(data)

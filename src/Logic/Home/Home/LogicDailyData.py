@@ -1,4 +1,4 @@
-import datetime
+from Logic.Home.Home.LogicShopData import LogicShopData
 class LogicDailyData:
     def encode(self):
         self.writeVInt(0) #timestamp?
@@ -40,7 +40,8 @@ class LogicDailyData:
         self.writeVInt(0)
         self.writeVInt(0)
         
-        self.writeVInt(0) # shop array
+        self.writeVInt(0)
+        #LogicShopData.encode(self)
         
         self.writeVInt(0) # adstatus array
         

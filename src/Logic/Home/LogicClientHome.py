@@ -1,5 +1,6 @@
 from Logic.Home.Home.LogicDailyData import LogicDailyData
 from Logic.Home.Home.LogicConfData import LogicConfData
+from Logic.Notifications.NotificationFactory import NotificationFactory
 class LogicClientHome:
     def encode(self):
         LogicDailyData.encode(self)
@@ -7,11 +8,21 @@ class LogicClientHome:
         
         self.writeLong(0, 1)
         
-        self.writeVInt(0) #notification factory array
+        NotificationFactory.encode(self)
 
         self.writeVInt(0)
         self.writeBoolean(False) # boolean
 
+        self.writeVInt(0) # gatchadrop array
+        for x in range(0):
+            self.writeVInt(0)
+            self.writeDataReference(0, 0)
+            self.writeVInt(0)
+            self.writeDataReference(0, 0)
+            self.writeDataReference(0, 0)
+            self.writeDataReference(0, 0)
+            self.writeVInt(0)
 
         self.writeVInt(0) # array
-        self.writeVInt(0) # array
+        for x in range(0):
+            self.writeDataReference(0, 0)

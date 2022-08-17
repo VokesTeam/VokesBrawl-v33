@@ -3,9 +3,9 @@ class LogicConfData:
     def encode(self):
         # sub_1B9CB8 start
         self.writeVInt(1) #beep
-        
-        self.writeVInt(1) #array
-        self.writeVInt(1) #eventslotencode
+
+        self.writeVInt(1)  # Count
+        self.writeVInt(1)
         
         self.writeVInt(1) # eventdata array!
         self.writeVInt(0)
@@ -65,8 +65,20 @@ class LogicConfData:
         
         self.writeVInt(0) # release entry
         
-        self.writeVInt(0) # intvalue entry 
+        self.writeVInt(3) # intvalueentry
+
+        self.writeLong(1, 41000021) # themeid
+        self.writeLong(14, 1) # double token event
+        self.writeLong(31, 0) # coin shower event
         
-        self.writeVInt(0) # timedintvalue entry
+        self.writeVInt(2) # timedintvalue entry
+
+        self.writeDataReference(14, 1)
+        self.writeVInt(0)
+        self.writeVInt(7325) #time left
+
+        self.writeDataReference(31, 1)
+        self.writeVInt(0)
+        self.writeVInt(700000) # time left
         
         self.writeVInt(0) # customevent encode
