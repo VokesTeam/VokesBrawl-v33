@@ -1,3 +1,4 @@
+from Logic.Entry.LogicBattlePlayerMap import LogicBattlePlayerMap
 
 class LogicConfData:
     def encode(self):
@@ -13,35 +14,20 @@ class LogicConfData:
         self.writeVInt(0)
         self.writeVInt(0)
         self.writeVInt(10)
-        self.writeDataReference(15, 15)
+        self.writeDataReference(15, 7)
         self.writeVInt(3)
         self.writeVInt(0)
         self.writeString()
         self.writeVInt(0)
         self.writeVInt(0)
         self.writeVInt(0)
-        self.writeVInt(0) #modifier array
+        self.writeVInt(1) #modifier array
+        self.writeVInt(1)
         
         self.writeVInt(0)
         self.writeVInt(0)
-        
-        self.writeByte(1) #writeBattlePlayerMap
-        self.writeVInt(0) #Logic
-        self.writeVInt(0) #Long
-        self.writeString()
-        self.writeVInt(0)
-        
-        self.writeVInt(0) #dataref
-        
-        self.writeInt(0) #CompressedString
-        
-        self.writeVInt(0) #Logic
-        self.writeVInt(0) #Long
-        
-        self.writeString()
-        self.writeVInt(0)
-        self.writeVInt(0) #array
-        #writeBattlePlayerMap end!
+
+        LogicBattlePlayerMap.encode(self)
         
         self.writeVInt(0)
         
@@ -56,14 +42,17 @@ class LogicConfData:
         
         self.writeVInt(0) # events array
         
-        self.writeVInt(0) #writeArrayVInt
-        self.writeVInt(0) #writeArrayVInt
-        self.writeVInt(0) #writeArrayVInt
-        self.writeVInt(0) #writeArrayVInt
+        self.writeLogicLongList([10, 20, 35, 75, 140, 290, 480, 800, 1250]) #writeArrayVInt
+        self.writeLogicLongList([1, 2, 3, 4, 5, 10, 15, 20]) #writeArrayVInt
+        self.writeLogicLongList([20, 50, 140, 280]) #writeArrayVInt
+        self.writeLogicLongList([150, 400, 1200, 2600]) #writeArrayVInt
         
-        self.writeBoolean(False)
+        self.writeBoolean(True)
         
         self.writeVInt(0) # release entry
+        for x in range(0):
+            self.writeDataReference(16, 0) #brawler (should be locked in gamefiles)
+            self.writeInt(50) #countdown
         
         self.writeVInt(3) # intvalueentry
 
@@ -79,6 +68,6 @@ class LogicConfData:
 
         self.writeDataReference(31, 1)
         self.writeVInt(0)
-        self.writeVInt(700000) # time left
+        self.writeVInt(7325) # time left
         
         self.writeVInt(0) # customevent encode

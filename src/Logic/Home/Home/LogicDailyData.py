@@ -58,9 +58,13 @@ class LogicDailyData:
         self.writeString("RU")
         self.writeString("VokesTeam")
         
-        self.writeVInt(1) # intvalueentry
-        self.writeInt(1)
-        self.writeInt(0)
+        self.writeVInt(6) # intvalueentry
+        self.writeLong(3, 0) #token anim
+        self.writeLong(4, 0) #trophies anim
+        self.writeLong(10, 0) #pp anim
+        self.writeLong(15, 0) #agescreen anim
+        self.writeLong(18, 1) #esport button
+        self.writeLong(20, 0) #gems anim
         
         self.writeVInt(1) # cooldownentry
         self.writeVInt(0)
@@ -89,11 +93,36 @@ class LogicDailyData:
         self.writeVInt(0)
         
         self.writeBoolean(True) # != 0
-        self.writeVInt(0) # logicquests
+        self.writeVInt(0) # logicquests array
+        for x in range(0):
+            self.writeVInt(0)
+            self.writeVInt(0)
+            self.writeVInt(0)
+            self.writeVInt(0)
+            self.writeVInt(0)
+            self.writeVInt(0)
+            self.writeVInt(0)
+            self.writeVInt(0)
+            self.writeVInt(0)
+            self.writeVInt(0)
+            self.writeUInt8(0)
+            self.writeUInt8(0)
+            self.writeDataReference(15, 7)
+            self.writeVInt(0)
+            self.writeVInt(0)
+            self.writeVInt(0)
+            self.writeVInt(0)
+
         
         self.writeBoolean(True) # != 0
-        self.writeVInt(0) # vanityitems
-        
+        self.writeVInt(1) # vanityitems
+        for x in range(1):
+            self.writeDataReference(52, 1)
+            self.writeVInt(1)
+            for x in range(1):
+                self.writeVInt(1)
+                self.writeVInt(1)
+
         self.writeBoolean(True) # != 0
         for x in range(11): #logicplayerrankedseasondata
             self.writeVInt(0) 
