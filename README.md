@@ -16,3 +16,4 @@ Brawl Stars server emulator for version 34.151
 
 ## Credits:
  - ByteStream is from [BSDS V40](https://github.com/CrazorTheCat/BSDS-V40)
+ - Array's related to brawlers and resources in LogicClientAvatar made by vanyadev
