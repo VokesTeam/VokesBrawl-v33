@@ -8,6 +8,7 @@ Brawl Stars server emulator for version 34.151
  - Login
  - OwnHomeData
  - Player Profile
+ - Gamerooms (incomplete)
  - Notification factory (incomplete)
 
 ## Important notices:
