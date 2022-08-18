@@ -55,22 +55,7 @@ class ClientThread(Thread):
 					self.clientinfo.remove(self.contime)
 					self.clientinfo.remove(self.contries)
 					break
-		except ConnectionAbortedError:
-			print(f"{self.address[0]} disconnected!")
-			self.client.close()
-			self.clients.remove(self.address[0])
-			self.clients.remove(self.address[1])
-			self.clientinfo.remove(self.contime)
-			self.clientinfo.remove(self.contries)
-		except ConnectionResetError:
-			print(f"{self.address[0]} disconnected!")
-			self.client.close()
-			self.clients.remove(self.address[0])
-			self.clients.remove(self.address[1])
-			self.clientinfo.remove(self.contime)
-			self.clientinfo.remove(self.contries)
-		except TimeoutError:
-			print(f"{self.address[0]} disconnected!")
+		except:
 			self.client.close()
 			self.clients.remove(self.address[0])
 			self.clients.remove(self.address[1])

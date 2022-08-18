@@ -1,17 +1,16 @@
 from Logic.Home.Entry.LogicEventData import LogicEventData
 class LogicConfData:
     def encode(self):
-        # sub_1B9CB8 start
-        self.writeVInt(1) #beep
+        self.writeVInt(0)  # beep boop
 
-        LogicEventData.encode(self) #todo: complete this hsdfadskozoxckp
+        LogicEventData.encode(self)
         
         self.writeLogicLongList([10, 20, 35, 75, 140, 290, 480, 800, 1250]) #writeArrayVInt
         self.writeLogicLongList([1, 2, 3, 4, 5, 10, 15, 20]) #writeArrayVInt
         self.writeLogicLongList([20, 50, 140, 280]) #writeArrayVInt
         self.writeLogicLongList([150, 400, 1200, 2600]) #writeArrayVInt
         
-        self.writeBoolean(True)
+        self.writeBoolean(True) #aklsdaopdcziopxioaiopsea
         
         self.writeVInt(0) # release entry
         for x in range(0):
@@ -35,3 +34,5 @@ class LogicConfData:
         self.writeVInt(7325) # time left
         
         self.writeVInt(0) # customevent encode
+        
+        self.writeBoolean(False) #2 boolean go br

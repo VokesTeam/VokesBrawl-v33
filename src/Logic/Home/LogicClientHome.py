@@ -8,21 +8,9 @@ class LogicClientHome:
         
         self.writeLong(0, 1)
         
-        NotificationFactory.encode(self)
-
+        self.writeVInt(0) #notification factory
+        
         self.writeVInt(0)
-        self.writeBoolean(False) # boolean
-
-        self.writeVInt(0) # gatchadrop array
-        for x in range(0):
-            self.writeVInt(0)
-            self.writeDataReference(0, 0)
-            self.writeVInt(0)
-            self.writeDataReference(0, 0)
-            self.writeDataReference(0, 0)
-            self.writeDataReference(0, 0)
-            self.writeVInt(0)
-
-        self.writeVInt(0) # array
-        for x in range(0):
-            self.writeDataReference(0, 0)
+        self.writeBoolean(False)
+        self.writeVInt(0)
+        self.writeVInt(0)

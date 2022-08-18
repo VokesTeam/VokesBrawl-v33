@@ -1,5 +1,5 @@
-# VokesBrawl-v34
-Brawl Stars server emulator for version 34.151
+# VokesBrawl-v33
+Brawl Stars server emulator for version 33.118
 
 ![screenshot](https://github.com/VokesTeam/VokesBrawl-v34/blob/main/screenshot/screenshot.png)
 

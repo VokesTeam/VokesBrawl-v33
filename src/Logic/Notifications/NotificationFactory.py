@@ -5,7 +5,6 @@ from Logic.Notifications.ProLeagueSeasonEndNotification import ProLeagueSeasonEn
 
 class NotificationFactory:
     def encode(self):
-        self.writeVInt(4)
         FloaterTextNotification.encode(self, False, 'Made by VokesTeam')
         StarPointsMigrationNotification.encode(self, True, 0)
         TicketCompensationNotification.encode(self)

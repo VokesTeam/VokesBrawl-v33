@@ -1,14 +1,18 @@
 
 class LogicClientAvatar:
     def encode(self):
-        for x in range(3):
-            self.writeLogicLong(0, 1)
+        self.writeVInt(0)
+        self.writeVInt(1)
+        self.writeVInt(0)
+        self.writeVInt(0)
+        self.writeVInt(0)
+        self.writeVInt(0)
         
-        self.writeString(self.player.name)
-        self.writeBoolean(self.player.nameset) #nameset
+        self.writeString(self.player.name)  # Name
+        self.writeByte(self.player.nameset)  # NameSetByUser
         self.writeInt(0)
         
-        self.writeVInt(8) # commodity count
+        self.writeVInt(8)  # Commodity Array Count
         
         # unlocked brawlers and resources array
         self.writeVInt(366)
@@ -56,9 +60,6 @@ class LogicClientAvatar:
         self.writeVInt(0)
         #commodity end
         
-        self.writeVInt(99999) # gems
-        self.writeVInt(0) # free gems
-        self.writeVInt(0) # player level
         self.writeVInt(0)
         self.writeVInt(0)
         self.writeVInt(0)
@@ -67,4 +68,9 @@ class LogicClientAvatar:
         self.writeVInt(0)
         self.writeVInt(0)
         self.writeVInt(0)
-        self.writeVInt(2) #tutorial state
+        self.writeVInt(0)
+        self.writeVInt(0)
+        self.writeVInt(2)
+        self.writeVInt(self.player.tutorialState)  # Tutorial State
+        
+        self.writeVInt(2)

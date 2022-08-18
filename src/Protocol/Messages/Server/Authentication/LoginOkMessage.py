@@ -16,9 +16,9 @@ class LoginOkMessage(Writer):
         self.writeString()
         self.writeString()
 
-        self.writeInt(34)
-        self.writeInt(151)
-        self.writeInt(1)
+        self.writeInt(33)
+        self.writeInt(118)
+        self.writeInt(0)
 
         self.writeString("dev")
 

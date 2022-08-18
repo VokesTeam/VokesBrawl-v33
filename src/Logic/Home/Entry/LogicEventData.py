@@ -7,39 +7,30 @@ class LogicEventData:
             events = json.loads(open("src/Logic/JSONData/Events.json", 'r').read())
         except:
             events = json.loads(open("Logic/JSONData/Events.json", 'r').read()) #hehe
-        self.writeVInt(1)  # Count
+        self.writeVInt(16)
+        for x in [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 20, 21, 22, 23, 24]:
+            self.writeVInt(x)
+        
+        self.writeVInt(1)  # Events
+        #Event Start
+        self.writeVInt(0)
         self.writeVInt(1)
-        for event in events:
-            self.writeVInt(1) # eventdata array!
-            self.writeVInt(0)
-            self.writeVInt(1)
-            self.writeVInt(0)
-            self.writeVInt(0)
-            self.writeVInt(0)
-            self.writeDataReference(15, event["ID"])
-            self.writeVInt(3)
-            self.writeVInt(0)
-            self.writeString()
-            self.writeVInt(0)
-            self.writeVInt(0)
-            self.writeVInt(0)
-            self.writeVInt(1) #modifier array
-            self.writeVInt(1)
-        
-            self.writeVInt(0)
-            self.writeVInt(0)
+        self.writeVInt(0)
+        self.writeVInt(0)
+        self.writeVInt(10)
+        self.writeDataReference(15, 7)
+        self.writeVInt(3)
+        self.writeVInt(3)
+        self.writeString()
+        self.writeVInt(0)
+        self.writeVInt(0)
+        self.writeVInt(0)
+        self.writeVInt(1) #modifiers
+        self.writeVInt(1)
 
-            LogicBattlePlayerMap.encode(self)
+        self.writeVInt(0)
+        self.writeVInt(0)
+        self.writeByte(0)
+        self.writeVInt(0)
         
-            self.writeVInt(0)
-        
-            self.writeBoolean(True)
-            self.writeVInt(0) #LogicRankedSeason
-            self.writeString()
-            self.writeVInt(0)
-            self.writeVInt(0)
-            self.writeVInt(0) #array
-            self.writeVInt(0) #array
-            #Event end
-        
-        self.writeVInt(0) # events array
+        self.writeVInt(0) # upcoming events array
