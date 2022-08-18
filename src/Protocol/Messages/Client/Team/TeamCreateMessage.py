@@ -1,5 +1,5 @@
 from DataStream.ByteStream import Reader
-#from Protocol.Messages.Server.Team.TeamMessage import TeamMessage
+from Protocol.Messages.Server.Team.TeamMessage import TeamMessage
 
 class TeamCreateMessage(Reader):
     def __init__(self, client, player, initial_bytes):

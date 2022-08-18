@@ -40,8 +40,8 @@ class LogicDailyData:
         self.writeVInt(0)
         self.writeVInt(0)
         
-        self.writeVInt(0)
-        #LogicShopData.encode(self)
+        #self.writeVInt(0)
+        LogicShopData.encode(self)
         
         self.writeVInt(0) # adstatus array
         
@@ -88,35 +88,18 @@ class LogicDailyData:
             self.writeInt(0)
             self.writeInt(0)
         
-        self.writeVInt(1) # proleagueseasondata maybe!
-        self.writeVInt(0)
-        self.writeVInt(0)
-        
-        self.writeBoolean(True) # != 0
-        self.writeVInt(0) # logicquests array
+        self.writeVInt(0) # proleagueseasondata maybe!
         for x in range(0):
             self.writeVInt(0)
             self.writeVInt(0)
-            self.writeVInt(0)
-            self.writeVInt(0)
-            self.writeVInt(0)
-            self.writeVInt(0)
-            self.writeVInt(0)
-            self.writeVInt(0)
-            self.writeVInt(0)
-            self.writeVInt(0)
-            self.writeUInt8(0)
-            self.writeUInt8(0)
-            self.writeDataReference(15, 7)
-            self.writeVInt(0)
-            self.writeVInt(0)
-            self.writeVInt(0)
-            self.writeVInt(0)
+        
+        self.writeBoolean(True) # != 0
+        self.writeVInt(0) # logicquests array
 
         
         self.writeBoolean(True) # != 0
-        self.writeVInt(1) # vanityitems
-        for x in range(1):
+        self.writeVInt(0) # vanityitems
+        for x in range(0):
             self.writeDataReference(52, 1)
             self.writeVInt(1)
             for x in range(1):

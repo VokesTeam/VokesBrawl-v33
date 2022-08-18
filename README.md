@@ -7,12 +7,18 @@ Brawl Stars server emulator for version 34.151
  - Anti-DDOS
  - Login
  - OwnHomeData
+ - Player Profile
+ - Notification factory (incomplete)
 
 ## Important notices:
  - You'll need Python >= 3.7
  - Anti-DDOS is experimental thing, that may not work as planned. It's will improve with time
  - Missing features will be added in future
  - You should find client by yourself
+
+## Running the server:
+ - If you want, configure config.json
+ - In terminal type __`python Core.py`__
 
 ## Credits:
  - ByteStream is from [BSDS V40](https://github.com/CrazorTheCat/BSDS-V40)

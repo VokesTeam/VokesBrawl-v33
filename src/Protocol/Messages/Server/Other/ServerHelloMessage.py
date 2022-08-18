@@ -1,12 +1,13 @@
 from DataStream.ByteStream import Writer
-from Logic.Entry.LogicBattlePlayerMap import LogicBattlePlayerMap
 
-class TeamMessage(Writer):
+class ServerHelloMessage(Writer):
 
     def __init__(self, client, player):
         super().__init__(client)
-        self.id = 24124
+        self.id = 20100
         self.player = player
 
     def encode(self):
-        pass
+        self.writeInt(24)
+        for x in range(24):
+            self.writeByte(1)

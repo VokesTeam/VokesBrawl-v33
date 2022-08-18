@@ -1,22 +1,29 @@
+import json
 class Players:
+	try:
+		settings = json.loads(open("src/config.json", 'r').read())
+	except:
+		settings = json.loads(open("config.json", 'r').read())
 
-	name = "Player"
+	name = settings["Name"]
 	nameset = True
 
-	profileIcon = 0
-	nameColor = 0
+	profileIcon = settings["ProfileIcon"]
+	nameColor = settings["NameColor"]
 
 	trophyRoad = 200
 	expPoints = 99999
 
-	trophies = 99999
-	highestTrophies = 99999
+	trophies = settings["Trophies"]
+	highestTrophies = settings["HighestTrophies"]
 
-	gems = 99999
-	gold = 99999
-	star = 99999
+	gems = settings["Gems"]
+	gold = settings["Gold"]
+	star = settings["Star"]
 
-	homeBrawler = 44
+	homeBrawler = settings["HomeBrawler"]
+
+	starPower = 76
 
 	tutorialState = 2
 	def __init__(self, device):
