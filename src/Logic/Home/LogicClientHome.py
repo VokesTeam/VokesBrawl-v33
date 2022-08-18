@@ -1,5 +1,5 @@
-from Logic.Home.Home.LogicDailyData import LogicDailyData
-from Logic.Home.Home.LogicConfData import LogicConfData
+from Logic.Home.Entry.LogicDailyData import LogicDailyData
+from Logic.Home.Entry.LogicConfData import LogicConfData
 from Logic.Notifications.NotificationFactory import NotificationFactory
 class LogicClientHome:
     def encode(self):

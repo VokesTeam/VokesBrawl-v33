@@ -5,6 +5,7 @@ from Protocol.Messages.Client.Battle.CancelMatchmakingMessage import CancelMatch
 from Protocol.Messages.Client.Home.GetPlayerProfileMessage import GetPlayerProfileMessage
 from Protocol.Messages.Client.Team.TeamCreateMessage import TeamCreateMessage
 from Protocol.Messages.Client.Home.EndClientTurnMessage import EndClientTurnMessage
+from Protocol.Messages.Client.Team.TeamSetMemberReadyMessage import TeamSetMemberReadyMessage
 
 
 packets = {
@@ -15,4 +16,5 @@ packets = {
     14106: CancelMatchmakingMessage,
     14113: GetPlayerProfileMessage,
     14350: TeamCreateMessage,
+    14355: TeamSetMemberReadyMessage,
 }

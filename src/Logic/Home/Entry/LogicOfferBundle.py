@@ -1,7 +1,7 @@
 import json
 from Logic.Entry.LogicGemOffer import LogicGemOffer 
 
-class LogicShopData:
+class LogicOfferBundle:
     def encode(self):
         try:
             shop = json.loads(open("src/Logic/JSONData/Shop.json", 'r').read())
